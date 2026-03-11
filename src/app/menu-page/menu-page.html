@@ -1,0 +1,47 @@
+<div class="main-container">
+    <div class="header">
+    <div class="header__title">
+      Раздел: {{ activeTypeName }}
+    </div>
+    <div class="header__stats">
+      <span class="header__stat-item">Выбрано пунктов: {{ selectedCount }}</span>
+      <span class="header__stat-item">Общее значение: {{ selectedTotal }}</span>
+    </div>
+  </div>
+	<div class="content">
+        <div class="menu">
+      <div class="menu__list">
+        <div 
+          *ngFor="let type of menuTypes" 
+          class="menu__item"
+          [class.menu__item_active]="type.isActive"
+          (click)="setActiveType(type.id)"
+        >
+					<span class="menu__marker">{{ type.isActive ? '>' : '∨' }}</span>
+          <span class="menu__name">{{ type.name }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="items">
+      <div class="items__list">
+        <div 
+          *ngFor="let item of currentItems" 
+          class="items__row"
+        >
+          <label class="item-checkbox">
+            <input 
+              type="checkbox" 
+              class="item-checkbox__input"
+              [checked]="item.checked"
+              (change)="onCheckboxChange(item.id)"
+            >
+            <div class="item-checkbox__info">
+              <span class="item-checkbox__name">{{ item.name }}</span>
+              <span class="item-checkbox__value">Value: {{ item.value }}</span>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

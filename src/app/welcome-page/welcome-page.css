@@ -1,0 +1,30 @@
+.welcome-container {
+  text-align: center;
+  margin-top: 100px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.menu-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff8811;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.menu-link:hover {
+  background-color: #b85c00;
+}
